@@ -1,0 +1,9 @@
+Package: com.neinzedd9.twittersignature
+Name: Twitter Signature
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Automatically add a signature to your tweets!
+Maintainer: NeinZedd9
+Author: NeinZedd9
+Section: Tweaks
