@@ -12,7 +12,9 @@
         NSString *prefsNotification = [tweakId stringByAppendingString:@".prefschanged"];
         NSDictionary *defaults = @{@"Enabled": @(YES), @"signature": @"\n@ladygaga Favorite Female Artist Pop/Rock #AMAs"};
 
-        sharedProvider = [[CSPreferencesProvider alloc] initWithTweakID:tweakId defaults:defaults postNotification:prefsNotification notificationCallback:nil];
+        sharedProvider = [[CSPreferencesProvider alloc] initWithTweakID:tweakId defaults:defaults postNotification:prefsNotification notificationCallback:^void (CSPreferencesProvider *provider) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"kTCSettingsChanged" object:nil userInfo:nil];
+        }];
     });
     return sharedProvider;
 }
